@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Currency Exchange</title>
+  <script src="./js/bundle.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div id="app">
+
+      <h3>Enter an amount and select a currency for conversion into Euros</h3>
+      <label for="AmountInput">Enter an Amount:</label>
+        <div id="AmountInput">
+      <input type="number"  label="Enter Amount" v-model.number="amount"/>
+    </div>
+<br>
+    <label for="currency_select">Select a Currency</label>
+        <select id="currency_select" v-model="exchangeRate">
+          <option disabled value="">Select a currency:</option>
+          <option v-for="(rate, currency) in rates" :value=rate>{{currency}}</option>
+        </select>
+
+  <div v-if="exchangeRate">
+          <h2>{{amount}} is €{{exchange}} </h2>
+  </div>
+  </div>
+  </body>
+  </html>

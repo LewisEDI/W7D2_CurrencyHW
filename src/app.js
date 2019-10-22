@@ -19,11 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     exchange: function() {
       return this.exchangedAmount = this.amount * this.exchangeRate;
       return this.exchangeAmount;
-    },
-    filteredAccounts: function(){
-      return this.rates.filter((rate) => {
-        return account.balance >= this.filterAmount;
-      });
     }
   },
     methods: {
@@ -31,10 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("https://api.exchangeratesapi.io/latest")
         .then(data => data.json())
         .then(rates => this.rates = rates.rates )
-      },
-      currencyRate: function() {
-        this.rate
-
       }
     }
   })
